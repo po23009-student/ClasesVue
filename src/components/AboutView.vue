@@ -16,6 +16,8 @@
     }); 
 
     //metodos
+
+    // Usando Promesas
     function cargarDatos() {
         console.log('A');
         apiRandomUser.get('/api/').then(response => {            
@@ -32,6 +34,7 @@
         console.log('C');
     }
 
+    // Usando Async - Await
     async function cargarDatos2() {
         console.log('A');
         try {
