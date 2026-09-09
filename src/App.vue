@@ -1,5 +1,18 @@
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router'  
+import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
+
+const search = computed({
+  get() {
+    return route.query.search ?? ''
+  },
+  set(search) {
+    router.replace({ query: { search } })
+  },
+})  
 </script>
 
 <template>
@@ -7,7 +20,6 @@
   <p><strong>Current route path:</strong></p>
   <nav>
     <RouterLink to="/">Go to Home</RouterLink>
-    <RouterLink to="/about">Go to About</RouterLink>
   </nav>
   <main>
     <RouterView />

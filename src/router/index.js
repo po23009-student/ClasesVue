@@ -1,17 +1,16 @@
-import { createMemoryHistory, createRouter, createWebHashHistory } from 'vue-router'
+import { createMemoryHistory, createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
-import HomeView from './HomeView.vue'
-import AboutView from './AboutView.vue'
 import DatosAlumno from '../components/DatosAlumno.vue'
+import App from '../App.vue';
 
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/about', component: AboutView },
+  { path: '/', component: App },
+  //{ path: '/about', component: AboutView },
   { path: '/datosalumno/:idalumno', component: DatosAlumno }
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes,
 })
 
